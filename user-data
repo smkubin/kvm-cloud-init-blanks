@@ -1,0 +1,10 @@
+users:
+  - name: <user>
+    shell: /bin/bash
+    sudo: ALL=(ALL) ALL
+    lock_passwd: false
+    passwd: <openssl passwd -6 'clear_text_pw'>  # SHA-512 hash of your password
+    ssh_authorized_keys:
+     - <pub key>
+ssh_pwauth: true
+chpasswd: { expire: false }

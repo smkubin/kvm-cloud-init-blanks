@@ -1,0 +1,5 @@
+#cloud-config
+# minimal config - clear-text pw for default user (cloud-user on centos)
+password: password
+chpasswd:
+  expire: False
