@@ -1,10 +1,13 @@
+#cloud-config
 users:
   - name: <user>
     shell: /bin/bash
     sudo: ALL=(ALL) ALL
     lock_passwd: false
-    passwd: <openssl passwd -6 'clear_text_pw'>  # SHA-512 hash of your password
+    passwd: "<openssl passwd -6 'clear_text_pw'>"  # SHA-512 hash of your password
+#   example:
+#   passwd: "$6$ftGLsbQ1MyRPPxqQ$XT8HBHBCHCp8lriG934aOo4ic4/43s2dGwndp8XzqVFGAljojtJAmEJnjHBa5FCooP4T/2o3HbynGQKmJqqjv."  # pw = password
     ssh_authorized_keys:
      - <pub key>
-ssh_pwauth: true
+ssh_pwauth: false
 chpasswd: { expire: false }
